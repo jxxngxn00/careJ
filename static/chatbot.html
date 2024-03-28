@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Care J</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/myresult.css" />
+    <link rel="stylesheet" href="/static/css/chatbot.css">
+
+    <!-- 버튼 CSS -->
+    <!--link rel="shortcut icon" href="../favicon.ico"-->
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/vicons-font.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/buttons.css" />
+    
+    <style>
+        @font-face {
+            font-family: 'TheJamsil5Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'TheJamsil5Bold';
+        }
+        
+        p { margin-bottom: 0px!important; }
+        .thumb {
+            position: relative;
+            margin: 2.5rem auto 2.5em;
+            display: block;
+            overflow: hidden;
+            height: 25rem;
+            width: 25rem;
+        }
+        
+        #sidebar {
+            margin: 5%;
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 9.5px 0.5px gray;
+        }
+
+    </style>
+</head>
+
+<body class="hompage is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+
+            </div>
+
+            <!-- Nav 메뉴바 시작 -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="/templates/index.html">Home</a></li>
+                    <li>
+                        <a href="/templates/MentalTest.html">멘탈 케어</a>
+                        <ul>
+                            <li><a href="/templates/MentalTest.html">심리/성격 검사</a></li>
+                            <li><a href="/templates/MentalTest.html">우울증 검사</a></li>
+                            <li><a href="/templates/MentalTest.html">자존감 검사</a></li>
+                        </ul>
+                    </li>
+                    <li class="current"><a href="/templates/HealthTest.html">신체 케어</a></li>
+                    <li><a href="#">J와 대화하기</a></li>
+                    <li><a href="/templates/map.html">상담 센터 찾기</a></li>
+                    <li><a href="/templates/mystatus.html">마이 페이지</a></li>
+                </ul>
+            </nav>
+            <!-- Nav 메뉴바 끝 -->
+
+
+        </section>
+
+
+        <header class="style1">
+            <h2 style="display: inline">지금 AI 상담사, </h2>
+            <h2 class="lettercolor" style="display: inline">'챗봇 J'</h2>
+            <h2 style="display: inline">와 대화해보세요.</h2>
+        </header>
+
+
+        <div id="chatJ" class="row aln-center" style="margin-left:0px;">
+
+            <div class="chatting">
+                <!--div class="from-me chat">
+                    <p>Hey there! What's up?</p>
+                </div>
+                <div class="clear chat"></div>
+                <div class="from-them chat">
+                    <p>Checking out iOS7 you know..</p>
+                </div>
+                <div class="clear chat"></div>
+                <div class="from-me chat">
+                    <p>Check out this bubble!</p>
+                </div>
+                  <div class="clear chat"></div>
+                <div class="from-them chat">
+                    <p>It's pretty cool!</p>
+                </div>
+                  <div class="clear chat"></div-->
+                
+                <div class="from-me chat">
+                    <span class="chat-box">{{inp}}</span>
+                </div>
+                <div class="clear chat"></div>
+                <div class="from-them chat">
+                    <p>{{res}}</p>
+                </div>
+                
+                <div class="inputAnswer">
+                    <form method="POST">
+                        <input type="text" placeholder="" id="inputAn" name="inputme">
+                        <input type="submit" value="전송" class="sending_btn" onclick="" id="send">
+                    </form>
+                </div>
+                <!--
+
+                <div class="inputAnswer">
+                    <form action ="/method" method="POST"></form>
+                    <form method="POST" action="{{ url_for('chatbot')}}">
+                        <input type="text" placeholder="" id="user_input" name="user_input" required>
+                        <input type="submit" value="전송" class="sending_btn" onclick="" id="send">
+                    </form>
+                    <input type="text" placeholder="" id="inputAn">
+                    <button class="sending_btn" onclick="" id="send">전송</button>
+                </div-->
+
+                <script>
+                    document.querySelector('#send').addEventListener('click',function(){
+                        var template = `<div class="from-me chat">
+                            <span class="chat-box">${ document.querySelector('#inputAn').value}</span>
+                            </div>`
+                            document.querySelector('.chatting').insertAdjacentHTML('beforeend',template)
+                    })
+                </script>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.dropotron.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

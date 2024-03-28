@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Care J</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./SJ_resrc/assets/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='./SJ_resrc/assets/css/mystatus.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./SJ_resrc/assets/css/map.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='./images/carej.png') }}"/>
+
+    <!-- 버튼 CSS -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='`favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/normalize.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/vicons-font.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/buttons.css') }}" />
+
+    <style>
+        @font-face {
+            font-family: 'TheJamsil5Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'TheJamsil5Bold';
+        }
+        
+        .thumb {
+            position: relative;
+            margin: 2.5rem auto 2.5em;
+            display: block;
+            overflow: hidden;
+            height: 25rem;
+            width: 25rem;
+        }
+        
+        #sidebar {
+            margin: 5%;
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 9.5px 0.5px gray;
+        }
+    </style>
+</head>
+
+<body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1></h1>
+                <p></p>
+            </div>
+
+            <!-- Nav 메뉴바 시작 -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li>
+                        <a href="#">멘탈 케어</a>
+                        <ul>
+                            <li><a href="#">심리/성격 검사</a></li>
+                            <li><a href="#">우울증 검사</a></li>
+                            <li><a href="#">자존감 검사</a></li>
+                        </ul>
+                    </li>
+                    <li class="current"><a href="../신체테스트/HealthTest.html">신체 케어</a></li>
+                    <li><a href="./chatbot.html">J와 대화하기</a></li>
+                    <li><a href="./map.html">상담 센터 찾기</a></li>
+                    <li><a href="./마이페이지/mystatus.html">마이 페이지</a></li>
+                </ul>
+            </nav>
+            <!-- Nav 메뉴바 끝 -->
+
+        </section>
+
+        <!-- Main -->
+        <div id="main" class="wrapper style2">
+            <div class="title">
+                <p style="font-size: 1.5rem;">센터 안내</p>
+            </div>
+            <div class="container">
+
+                <div class="row gtr-150">
+                    <div class="col-3 col-12-medium">
+                        <!-- Sidebar -->
+                        <div id="menu_wrap" class="bg_white">
+                            <div class="option">
+                                <div>
+                                    <form onsubmit="searchPlaces(); return false;">
+                                        <input type="text" value="서울 정신건강의학과" id="keyword" size="15">
+                                        <button class="submit_btn" type="submit">검색</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr>
+                            <ul id="placesList"></ul>
+                            <div id="pagination"></div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="col-9 col-12-medium imp-medium">
+                        <div id="content">
+
+                            <!-- Features -->
+                            <div class="map_wrap">
+                                <div id="map_container" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+                                
+                                <script type="text/javascript" async src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a97cdc214e16db7b329bf93f85e1dd14"></script>
+                                
+                            </div>
+                            
+                            <!-- 검색결과 리스트 -->
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a97cdc214e16db7b329bf93f85e1dd14&libraries=services"></script>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights -->
+        
+        <!-- Footer -->
+        <section id="footer" class="wrapper">
+            <div class="title">About Care J</div>
+            <div class="container">
+                <header class="style1">
+                    <h2>케어제이에 대해서 소개해드릴게요!</h2>
+                    <p>
+                        팀원 소개 및 프로젝트 소개가 들어갈 예정입니다.<br /> 팀원 소개 및 프로젝트 소개가 들어갈 예정입니다.
+                    </p>
+                </header>
+                <div class="row">
+                    <div class="col-12 col-12-medium">
+                        
+                        <!-- Contact -->
+                        <section class="feature-list small">
+                            <div class="row">
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 style="color: white !important;">오다정</h3>
+                                        <p>
+                                            Untitled Corp<br /> 1234 Somewhere Rd<br /> Nashville, TN 00000
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 style="color: white !important;">박소정</h3>
+                                        <p>
+                                            Untitled Corp<br /> 1234 Somewhere Rd<br /> Nashville, TN 00000
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 style="color: white !important;">윤정인</h3>
+                                        <p>
+                                            Untitled Corp<br /> 1234 Somewhere Rd<br /> Nashville, TN 00000
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 style="color: white !important;">장혜민</h3>
+                                        <p>
+                                            Untitled Corp<br /> 1234 Somewhere Rd<br /> Nashville, TN 00000
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 style="color: white !important;">주예원</h3>
+                                        <p>
+                                            Untitled Corp<br /> 1234 Somewhere Rd<br /> Nashville, TN 00000
+                                        </p>
+                                    </section>
+                                </div>
+                                
+                            </div>
+                        </section>
+                        
+                    </div>
+                </div>
+                <div id="copyright">
+                    <ul>
+                        <li>&copy; Care J</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <!-- Scripts -->
+    
+    <script src="{{ url_for('static', filename='./SJ_resrc/assets/js/map.js') }}"></script>
+
+</body>
+
+</html>

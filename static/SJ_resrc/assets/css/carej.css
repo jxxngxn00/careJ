@@ -1,0 +1,133 @@
+.container:first-child {
+    float: left;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+#sidemenu {
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0px 1px 5px 5px lightgray;
+    float: left;
+}
+
+#content {
+    float: right;
+    /*width: 780px;
+    width: 930px;
+    width: 58.125em;*/
+}
+
+#sidemenu h2 {
+    list-style: none;
+    color: black;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 22px;
+}
+
+#sidemenu h2:first-child {
+    padding-top: 30px;
+}
+
+#sidemenu ul {
+    list-style: none;
+    color: black;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+#sidemenu li {
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+}
+
+#sidemenu a {
+    text-decoration: none;
+}
+
+#sidemenu ul:first-of-type>li:first-child {
+    background-color: #D3DAEA;
+}
+
+.my_contents {
+    float: right;
+}
+
+.test_visualization {
+    background-color: gray;
+    border: 1px solid black;
+    width: 555px;
+    height: 400px;
+    opacity: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.test_explanation {
+    background-color: gray;
+    border: 1px solid black;
+    width: 355px;
+    height: 400px;
+    opacity: 50%;
+    float: right;
+}
+
+.status_visualization_1 {
+    background-color: gray;
+    border: 1px solid black;
+    width: 455px;
+    height: 400px;
+    opacity: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.my_contents_in {
+    width: 455px;
+    height: 400px;
+    float: right;
+}
+
+.status_visualization_2 {
+    background-color: gray;
+    border: 1px solid black;
+    width: 455px;
+    height: 190px;
+    opacity: 50%;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.status_explanation {
+    background-color: gray;
+    border: 1px solid black;
+    width: 455px;
+    height: 190px;
+    opacity: 50%;
+    float: right;
+}
+
+#main {
+    height: 1000px;
+}
+
+#main input[type="button"] {
+    background-color: #70B8E5;
+    color: white;
+}
+
+#main input[type="button"]:hover {
+    background-color: #70B8E5;
+    color: white;
+    opacity: 90%;
+    transition: 0.1s;
+}
+
+#main .col-12 {}
